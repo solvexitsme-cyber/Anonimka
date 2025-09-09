@@ -27,7 +27,7 @@ except Exception:
     pass
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_TOKEN_HERE")
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./anonbot.db")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 if not BOT_TOKEN or BOT_TOKEN == "YOUR_TOKEN_HERE":
     raise RuntimeError("Укажи BOT_TOKEN в .env или в окружении")
@@ -500,4 +500,5 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
+
         pass
